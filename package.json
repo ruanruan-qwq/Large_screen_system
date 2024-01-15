@@ -1,0 +1,23 @@
+{
+  "name": "vue3_large_screen",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^4.1.0",
+    "axios": "^1.6.5",
+    "echarts": "^5.4.3",
+    "mockjs": "^1.1.0",
+    "vite-plugin-mock": "^3.0.1",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  }
+}
