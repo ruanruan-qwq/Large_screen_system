@@ -38,9 +38,6 @@ Mock.mock("/mock/dailyClinkerQty", "get", (options) => {
     { value: Mock.Random.integer(min, max), name: "车间10# 混料车间2C" },
     { value: Mock.Random.integer(min, max), name: "车间11# 混料车间2C" },
     { value: Mock.Random.integer(min, max), name: "车间12# 混料车间2C" },
-    { value: Mock.Random.integer(min, max), name: "车间13# 混料车间2C" },
-    { value: Mock.Random.integer(min, max), name: "车间14# 混料车间2C" },
-    { value: Mock.Random.integer(min, max), name: "车间15# 混料车间2C" },
   ];
 });
 
@@ -53,6 +50,387 @@ Mock.mock("/mock/historicalData", "get", (options) => {
     { year: 2019, value: Mock.Random.integer(min, max), unitStandard: "万吨" },
     { year: 2021, value: Mock.Random.integer(min, max), unitStandard: "万吨" },
     { year: 2022, value: Mock.Random.integer(min, max), unitStandard: "万吨" },
+  ];
+});
+
+// 原材料日购进&消耗
+Mock.mock("/mock/rawMaterialConsumption", "get", (options) => {
+  return [
+    {
+      type: "石灰石",
+      add: Mock.Random.integer(600, 800),
+      decrease: Mock.Random.integer(500, 700),
+      unitStandard: "T",
+      english: "Lim es tone",
+    },
+    {
+      type: "砂岩",
+      add: Mock.Random.integer(600, 800),
+      decrease: Mock.Random.integer(500, 700),
+      unitStandard: "T",
+      english: "Lim es tone",
+    },
+    {
+      type: "铝矾土",
+      add: Mock.Random.integer(600, 800),
+      decrease: Mock.Random.integer(500, 700),
+      unitStandard: "T",
+      english: "Lim es tone",
+    },
+    {
+      type: "铜粉",
+      add: Mock.Random.integer(600, 800),
+      decrease: Mock.Random.integer(500, 700),
+      unitStandard: "T",
+      english: "Lim es tone",
+    },
+  ];
+});
+
+// 原材料当月消耗
+Mock.mock("/mock/monthlyCost", "get", (options) => {
+  return [
+    {
+      value: "某某指标名称1",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称2",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称3",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称4",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称5",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称6",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称7",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称8",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称9",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称10",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称11",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称12",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称13",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称14",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      value: "某某指标名称15",
+      encoding: "某某编码",
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+  ];
+});
+
+// 三班车间设备运转率
+Mock.mock("/mock/productionSituation", "get", (options) => {
+  const min = 100;
+  const max = 500;
+  return [
+    {
+      equipment: "设备 1: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 2: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 3: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 4: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 5: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 6: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 7: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 8: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 9: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 10: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 11: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 12: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 13: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 14: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 15: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 16: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 17: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 11: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 12: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 13: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 14: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 15: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 16: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+    {
+      equipment: "设备 17: MK45551",
+      name: Mock.Random.cname(),
+      number: Mock.Random.integer(1, 100) + "%",
+    },
+  ];
+});
+
+// 三班白 中 晚产能
+Mock.mock("/mock/thirdShiftCapacity", "get", (options) => {
+  const min = 1000;
+  const max = 8000;
+  return [
+    [
+      {
+        name: "熟料1产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料2产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料3产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+    ],
+    [
+      {
+        name: "熟料1产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料2产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料3产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+    ],
+    [
+      {
+        name: "熟料1产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料2产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+      {
+        name: "熟料3产能",
+        number: Mock.Random.integer(min, max),
+        unitStandard: "kg",
+        up: Mock.Random.integer(1, 100) + "%",
+      },
+    ],
+  ];
+});
+
+// 柱状图比率
+Mock.mock("/mock/ratio", "get", (options) => {
+  const min = 0;
+  const max = 1000;
+  return [
+    { name: "白班", number: Mock.Random.integer(min, max) },
+    { name: "中班", number: Mock.Random.integer(min, max) },
+    { name: "晚班", number: Mock.Random.integer(min, max) },
+  ];
+});
+
+// 生产单位电耗
+Mock.mock("/mock/powerConsumption", "get", (options) => {
+  const min = 0;
+  const max = 1000;
+  return [
+    { date: "01/01", expend: Mock.Random.integer(min, max) },
+    { date: "02/02", expend: Mock.Random.integer(min, max) },
+    { date: "03/03", expend: Mock.Random.integer(min, max) },
+    { date: "04/04", expend: Mock.Random.integer(min, max) },
+    { date: "05/05", expend: Mock.Random.integer(min, max) },
+    { date: "06/06", expend: Mock.Random.integer(min, max) },
+    { date: "07/07", expend: Mock.Random.integer(min, max) },
+    { date: "08/08", expend: Mock.Random.integer(min, max) },
+    { date: "09/09", expend: Mock.Random.integer(min, max) },
+    { date: "10/10", expend: Mock.Random.integer(min, max) },
+    { date: "11/11", expend: Mock.Random.integer(min, max) },
+    { date: "12/12", expend: Mock.Random.integer(min, max) },
+    { date: "01/01", expend: Mock.Random.integer(min, max) },
+    { date: "02/02", expend: Mock.Random.integer(min, max) },
+    { date: "03/03", expend: Mock.Random.integer(min, max) },
+  ];
+});
+
+// 生产单位煤耗
+Mock.mock("/mock/coalConsumption", "get", (options) => {
+  const min = 0;
+  const max = 1000;
+  return [
+    { date: "01/01", expend: Mock.Random.integer(min, max) },
+    { date: "02/02", expend: Mock.Random.integer(min, max) },
+    { date: "03/03", expend: Mock.Random.integer(min, max) },
+    { date: "04/04", expend: Mock.Random.integer(min, max) },
+    { date: "05/05", expend: Mock.Random.integer(min, max) },
+    { date: "06/06", expend: Mock.Random.integer(min, max) },
+    { date: "07/07", expend: Mock.Random.integer(min, max) },
+    { date: "08/08", expend: Mock.Random.integer(min, max) },
+    { date: "09/09", expend: Mock.Random.integer(min, max) },
+    { date: "10/10", expend: Mock.Random.integer(min, max) },
+    { date: "11/11", expend: Mock.Random.integer(min, max) },
+    { date: "12/12", expend: Mock.Random.integer(min, max) },
+    { date: "01/01", expend: Mock.Random.integer(min, max) },
+    { date: "02/02", expend: Mock.Random.integer(min, max) },
+    { date: "03/03", expend: Mock.Random.integer(min, max) },
+  ];
+});
+
+// 运转时间
+Mock.mock("/mock/runningTime", "get", (options) => {
+  const min = 0;
+  const max = 10;
+  return [
+    { name: "煤窑", time: Mock.Random.integer(min, max) + "h" },
+    { name: "回转窑", time: Mock.Random.integer(min, max) + "h" },
+    { name: "生料窑", time: Mock.Random.integer(min, max) + "h" },
+    { name: "回转窑", time: Mock.Random.integer(min, max) + "h" },
+    { name: "煤窑", time: Mock.Random.integer(min, max) + "h" },
   ];
 });
 export default Mock;

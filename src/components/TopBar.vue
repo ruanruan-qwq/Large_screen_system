@@ -1,8 +1,11 @@
+<!-- 
+    顶部栏
+ -->
 <template>
     <section>
         <aside class="left">
             <div class="icon">
-                <FundTwoTone twoToneColor="#eb2f96" :style="{ fontSize: '35px' }" />
+                <FundTwoTone twoToneColor="#ccc" :style="{ fontSize: '35px' }" />
             </div>
             <div class="title">
                 建材智慧工厂生产看板
@@ -11,7 +14,7 @@
 
         <aside class="right">
             <!-- 产量标准 -->
-            <div v-for="(item, index) of ClinkerQty" :key="index">
+            <div v-for="(item, index) of ClinkerQty" :key="index" class="box">
                 <StarFilled :style="{ color: item.color, fontSize: '13px' }" />
                 <div class="data">
                     {{ item.content }}
@@ -112,7 +115,8 @@ onUnmounted(stopTimer);
 section {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 3.125rem;
+    width: 100%;
     background: linear-gradient(to bottom, #142437, #121b28);
 
     aside {
@@ -142,9 +146,15 @@ section {
             color: #fff;
         }
 
+        .box {
+            margin-top: 5px;
+        }
+
         .data {
             font-size: 10px;
             margin-left: 8px;
+
+
 
             span {
                 font-size: 14px;
@@ -152,6 +162,7 @@ section {
                 letter-spacing: 2px;
                 position: relative;
                 top: -5px;
+                margin: 0 10px;
             }
         }
 
@@ -166,8 +177,11 @@ section {
             margin-right: 30px;
 
             li:first-child {
-
                 font-size: 18px;
+            }
+
+            li:last-child {
+                font-size: 10px;
             }
         }
     }

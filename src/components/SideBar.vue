@@ -1,3 +1,6 @@
+<!-- 
+    车间日产量 --- 侧边栏
+ -->
 <template>
     <section>
         <header>
@@ -17,14 +20,14 @@
         </header>
 
         <footer>
-            <div class="historical-data">
+            <div class="historical_data">
                 <h1>车间历史产量</h1>
-                <span>Works hop his torioal output</span>
+                <p>Works hop his torioal output</p>
             </div>
             <div>
                 <ul>
                     <li v-for="(item, index) of historicalData" :key="index">
-                        <PieChartTwoTone :style="{ fontSize: '13px' }" />
+                        <BorderOuterOutlined :style="{ fontSize: '13px' }" />
                         {{ item.year }} - <span>{{ item.value }}</span> - {{ item.unitStandard }}
                     </li>
                 </ul>
@@ -38,7 +41,7 @@ import { ref, onMounted, computed } from "vue";
 import axios from 'axios'
 import "echarts";
 import VChart, { THEME_KEY } from "vue-echarts";
-import { PieChartTwoTone } from '@ant-design/icons-vue';
+import { BorderOuterOutlined } from '@ant-design/icons-vue';
 
 const content = ref([])
 const historicalData = ref([])
@@ -47,10 +50,11 @@ const historicalData = ref([])
  * 获取标题名
  */
 const title = computed(() => {
-    const arr = content.value.sort((a, b) => {
-        return a.value - b.value;
-    });
-    return arr.map(a => a.name)
+    // const arr = content.value.sort((a, b) => {
+    //     return a.value - b.value;
+    // });
+    // return arr.map(a => a.name)
+    return content.value.map(a => a.name)
 })
 
 /**
@@ -72,6 +76,10 @@ function init() {
  */
 const option = computed(() => {
     return {
+        grid: {
+            top: 0,
+            bottom: 0
+        },
         xAxis: {
             type: 'value',
             axisLabel: {
@@ -117,79 +125,80 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 section {
-    width: 150px;
-    height: 815px;
+    border-top: 10px solid #000;
+    width: 10%;
+    // height: 42.3125rem;
+    height: 895px;
     background-color: #14202d;
-    color: #fff;
-    // overflow: hidden;
+    color: #ccc;
 
-    .title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        span {
-            font-size: 12px;
-        }
-    }
-
-    .chart {
-        height: 760px;
-        width: 100%;
-        position: relative;
-        top: -25px;
-    }
-
-    ol {
-        position: absolute;
-        top: 125px;
-        left: -13px;
-        line-height: 42px;
-        font-size: 12px;
-
-        li {
-            animation: rotate 3s infinite forwards;
-            animation-delay: 5s;
+    header {
+        .title {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0 20px 0;
+
+            span {
+                font-size: 10px;
+            }
+        }
+
+        .chart {
+            width: 150px;
+            height: 550px;
             position: relative;
-            height: 42px;
-            width: 120px;
-            overflow: hidden;
+        }
 
-            div {
-                position: absolute;
-                top: 0;
-                left: 0;
-                color: #767c85;
+        ol {
+            position: absolute;
+            list-style-type: none;
+            top: 18%;
+            // line-height: 50px;
+            font-size: 12px;
+            padding: 0;
+            left: 1.5%;
 
-                &:first-child {
-                    animation: slideInRight 4s infinite;
-                    // left: 40px;
-                    left: 0px;
-                    // opacity: 0;
-                }
+            li {
+                animation: rotate 3s infinite forwards;
+                animation-delay: 4s;
+                display: flex;
+                position: relative;
+                overflow: hidden;
+                height: 42px;
+                width: 120px;
+                margin-top: 3px;
 
-                &:last-child {
-                    animation: slideOutLeft 4s infinite;
-                    left: -50px;
+                div {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #fff;
+
+                    &:first-child {
+                        animation: slideInRight 4s infinite;
+                        left: 0px;
+                    }
+
+                    &:last-child {
+                        animation: slideOutLeft 4s infinite;
+                        left: -50px;
+                    }
                 }
             }
         }
     }
 
     footer {
-        color: #fff;
-        background-color: #14202d;
-        margin-top: -100px;
+        // margin-top: 210px;
 
-        .historical-data {
+        .historical_data {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            margin: 10px 0;
 
-            span {
+            p {
                 font-size: 10px;
             }
         }
@@ -197,34 +206,33 @@ section {
         ul {
             list-style-type: none;
             padding: 0;
-            margin-top: 10px;
+            margin: 0;
             font-size: 12px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
 
-            span {
-                font-size: 18px;
-                font-weight: 600;
+            li {
+                margin-bottom: 10px;
             }
         }
     }
+
 }
 </style>
 
 <style>
 @keyframes rotate {
     0% {
-        transform: rotate3d(1, 0, 0, 0deg);
+        transform: rotate(1, 0, 0, 0deg);
     }
 
     33% {
-        transform: rotate3d(1, 0, 0, 360deg);
+        transform: rotate(1, 0, 0, 118.8deg);
     }
 
     100% {
-        transform: rotate3d(1, 0, 0, 360deg);
+        transform: rotate(1, 0, 0, 360deg);
     }
 }
 </style>
